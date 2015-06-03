@@ -2,9 +2,25 @@
 var main = (function() {
 
     function getTeasers(data) {
-        $.get('templates/mission-teaser.mst', function(template) {
+        $.get('templates/your-mission.mst', function(template) {
             var rendered = Mustache.render(template, data);
             $('#your-missions').html(rendered);
+        });
+        $.get('templates/recommended.mst', function(template) {
+            var rendered = Mustache.render(template, data);
+            $('#recommended').html(rendered);
+        });
+        $.get('templates/close.mst', function(template) {
+            var rendered = Mustache.render(template, data);
+            $('#close').html(rendered);
+        });
+        $.get('templates/recent.mst', function(template) {
+            var rendered = Mustache.render(template, data);
+            $('#recent').html(rendered);
+        });
+        $.get('templates/featured.mst', function(template) {
+            var rendered = Mustache.render(template, data);
+            $('#featured').html(rendered);
         });
     }
 
@@ -18,11 +34,8 @@ var main = (function() {
     function loadTemplates(data) {
       console.log(data)
 
+      getTeasers(data);
 
-      $.get('templates/mission-teaser.mst', function(template) {
-        var rendered = Mustache.render(template, data);
-        $('#mission-teaser').html(rendered);
-      });
     }
 
   function run() {
