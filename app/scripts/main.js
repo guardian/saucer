@@ -1,6 +1,13 @@
 /* jshint devel:true */
 var main = (function() {
 
+    function getTeasers(data) {
+        $.get('templates/mission-teaser.mst', function(template) {
+            var rendered = Mustache.render(template, data);
+            $('#your-missions').html(rendered);
+        });
+    }
+
     function getData(callback) {
         var url = 'http://visuals.guim.co.uk/spreadsheetdata/1-xaQYSi2vCehcIhs_p1bNWLed1PQb3nUSmVkRrOciFw.json';
         $.get(url, function(data) {
@@ -10,6 +17,8 @@ var main = (function() {
 
     function loadTemplates(data) {
       console.log(data)
+
+
       $.get('templates/mission-teaser.mst', function(template) {
         var rendered = Mustache.render(template, data);
         $('#mission-teaser').html(rendered);
