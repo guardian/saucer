@@ -37,11 +37,7 @@
 
       <div id="video" class="video"></div>
 
-      <div class="controls">
-        <button class="btn btn-info is-paused" id="play">
-          <i class="glyphicon glyphicon-play"></i>
-          <i class="glyphicon glyphicon-pause"></i>
-        </button>
+      <div id="tags_verify">
       </div>
 
       <div class="footer">
@@ -52,8 +48,22 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/mustache/mustache.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <script type="text/template" id="tag_template">
+      <ul id="tags">
+        {{#currentData}}
+          <li>
+            <time data-time="{{time}}">{{formattedTime}}</time>
+            <span>{{tag}}</span>
+            <i class="glyphicon glyphicon-ok accept"></i>
+            <i class="glyphicon glyphicon-remove remove"></i>
+          </li>
+        {{/currentData}}
+      </ul>
+    </script>
 
       <!-- build:js scripts/plugins.js -->
       <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
