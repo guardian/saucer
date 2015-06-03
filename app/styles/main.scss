@@ -11,10 +11,14 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
+ $component-active-bg: red;
+
 /* Space out content a bit */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: verdana, tahoma, sans-serif;
+  background:#FFFEF1;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -27,8 +31,8 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-
+  border-bottom: 1px solid #0C273D;
+  
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
@@ -38,11 +42,24 @@ body {
   }
 }
 
+h1, h2, h3 {
+	color:#54D0ED;
+}
+
+.btn-default {
+	background:#70B85D;
+	color:#fff;
+}
+.btn-default:active, .btn-default:hover, .btn-default:focus {
+	background:#2C5E2E;
+	color:#fff;
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  color: #54D0ED;
+  border-top: 1px solid #0C273D;
 }
 
 .container-narrow > hr {
@@ -52,7 +69,7 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #0C273D;
   .btn {
     font-size: 21px;
     padding: 14px 24px;
