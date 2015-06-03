@@ -62,10 +62,11 @@
   });
 
   $('#save').click(function () {
-    $tags.children().map(function () {
+    var data = $tags.children().map(function () {
       var time = this.querySelector('time').textContent;
       var tag = this.querySelector('span').textContent;
-      console.log(time, tag);
-    });
+      return '{"time": "' + time + '", "tag": "' + tag + '"}';
+    }).get().join(',\n');
+    $('#saved').text('[' + data  + ']');
   });
 })();
