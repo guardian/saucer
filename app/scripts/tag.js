@@ -4,9 +4,7 @@
   var $tag = $('#tag');
 
   function pad(m) {
-    if (m < 10) {
-      m = '0' + m;
-    }
+    if (m < 10) m = '0' + m;
     return m;
   }
 
@@ -19,7 +17,7 @@
       '<li>',
         '<time data-time="' + time + '">' + pad(mins) + ':' + pad(secs) + '</time>',
         '<span>' + tag + '</span>',
-        '<i class="glyphicon glyphicon-remove"></i>',
+        '<i class="glyphicon glyphicon-remove remove"></i>',
       '</li>'].join('');
 
     $tags.html(item + $tags.html());
@@ -43,7 +41,6 @@
 
   $tag.on('input', function () {
     window.video.pause();
-    $play.toggleClass('is-paused', window.video.paused())
   });
 
   $('#save').click(function () {
