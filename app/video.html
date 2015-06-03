@@ -38,22 +38,39 @@
       <div id="video" class="video"></div>
 
       <div class="controls">
-        <button class="btn btn-info" id="play">
+        <button class="btn btn-info is-paused" id="play">
           <i class="glyphicon glyphicon-play"></i>
           <i class="glyphicon glyphicon-pause"></i>
         </button>
         <form id="add_tag" class="form form-inline">
-          <input type="text" id="tag" class="form-control"  />
-          <button class="btn">
-            <i class="glyphicon glyphicon-plus-sign"></i>
-            Add tag
-          </button>
+          <h4>Tags</h4>
+          <h5>Suggested tags</h5>
+          <button class="tag btn btn-primary btn-sm" type="button">Police</button>
+          <button class="tag btn btn-primary btn-sm" type="button">Raised arms</button>
+          <button class="tag btn btn-primary btn-sm" type="button">Protestors</button>
+          <button class="tag btn btn-primary btn-sm" type="button">Stand off</button>
+          <button class="tag btn btn-primary btn-sm" type="button">Firework</button>
+          <div class="custom-tag">
+            <h5>Custom tags</h5>
+            <div id="custom-tags"></div>
+            <input type="text" id="tag" class="form-control input-sm"  />
+            <button class="btn btn-sm">
+              <i class="glyphicon glyphicon-plus-sign"></i>
+              Add tag
+            </button>
+          </div>
         </form>
       </div>
 
       <div class="tags">
-        <label for="tags">Tags</label>
-        <textarea id="tags" class="form-control" readonly></textarea>
+        <h4 class="timeline">
+          Timeline
+          <button class="btn btn-success" id="save">
+            <i class="glyphicon glyphicon-save"></i> Save
+          </button>
+        </h4>
+        <ul id="tags">
+        </ul>
       </div>
 
       <div class="footer">
