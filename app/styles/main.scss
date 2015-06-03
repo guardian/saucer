@@ -4,6 +4,7 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 
 @import "video.scss";
+@import "mission-listing.scss";
 // endbower
 
 .browserupgrade {
@@ -34,7 +35,7 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #0C273D;
-  
+
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
