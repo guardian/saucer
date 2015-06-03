@@ -9,7 +9,7 @@ var main = (function() {
     }
 
     function loadTemplates(data) {
-        console.log(data)
+      console.log(data)
       $.get('templates/mission-teaser.mst', function(template) {
         var rendered = Mustache.render(template, data);
         $('#mission-teaser').html(rendered);
