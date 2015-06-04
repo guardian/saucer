@@ -1,12 +1,12 @@
 
 {{#missions}}
     {{#your-missions}}
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-3">
         <img  class="img-responsive" src="{{image}}" alt="{{title}}" />
         <div class="thumbnail">
             <h3>{{title}}</h3>
             <p>{{pitch}}</p>
-            <p><a class="btn btn-default" href="#" role="button">View details »</a> <a class="btn btn-default" href="#" role="button">+</a></p>
+            <p class="actions"><a class="btn btn-default" href="#" role="button">View details »</a> <a class="btn btn-default" href="#" role="button">+</a></p>
         </div>
    </div>
    {{/your-missions}}
