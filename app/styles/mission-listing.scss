@@ -4,26 +4,34 @@
         font-size: 25px;
     }
 
-    h3 {
-        font-size: 20px;
-        margin-top: 10px;
-    }
 }
 
 .thumbnail {
   border-radius: 0;
   border: 0;
   background-color: #f1f1f1;
-  height: 260px;
+  @media (min-width: 768px) {
+    height: 210px;
+  }
   position: relative;
+    h3 {
+        font-size: 20px;
+        margin-top: 5px;
+    }
 }
 
 .actions {
-  position: absolute;
-  bottom: 4px;
-  margin: 0;
+  @media (min-width: 768px) {
+    position: absolute;
+    bottom: 4px;
+    margin: 0;
+  }
 }
 
 .container {
   background-color: white;
+}
+
+.img-responsive {
+  width: 100%;
 }
