@@ -34,7 +34,7 @@ body {
 /* Custom page header */
 .wrap {
 	background: #70b85d;
-}
+
 .header {
   border-bottom: 1px solid #0C273D;
 
@@ -48,7 +48,9 @@ body {
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
+
 	  color:#fff !important;
+
   }
 }
 .header img {
@@ -84,7 +86,6 @@ h1, h2, h3 {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #0C273D;
   .btn {
     font-size: 21px;
     padding: 14px 24px;
@@ -113,10 +114,6 @@ h1, h2, h3 {
     padding-right: 0;
   }
 
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
 
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
