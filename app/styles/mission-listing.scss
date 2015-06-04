@@ -4,10 +4,6 @@
         font-size: 25px;
     }
 
-    h3 {
-        font-size: 20px;
-        margin-top: 10px;
-    }
 }
 
 .thumbnail {
@@ -16,6 +12,10 @@
   background-color: #f1f1f1;
   height: 260px;
   position: relative;
+    h3 {
+        font-size: 20px;
+        margin-top: 5px;
+    }
 }
 
 .actions {
