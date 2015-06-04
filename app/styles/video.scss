@@ -1,6 +1,6 @@
-.video {
-  width: 100%;
-  height: 400px;
+.video-player {
+  height: 500px;
+  margin-top: 15px;
 }
 
 .controls {
@@ -41,6 +41,7 @@
 
 #tags {
   list-style: none;
+  min-height: 250px;
 
   time {
     display: inline-block;
@@ -75,4 +76,8 @@
 
 h4 {
   font-weight: bold;
+}
+
+#tags_verify {
+  margin-top: 15px;
 }
