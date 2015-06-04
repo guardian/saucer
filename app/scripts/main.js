@@ -22,6 +22,11 @@ var main = (function() {
             var rendered = Mustache.render(template, data);
             $('#featured').html(rendered);
         });
+        $.get('templates/all.mst', function(template) {
+            var rendered = Mustache.render(template, data);
+            $('#all').html(rendered);
+        });
+
     }
 
     function getData(callback) {

@@ -1,0 +1,7 @@
+{{#missions}}
+     <div class="col-sm-12">
+        <h3>{{title}}</h3>
+        <p>{{pitch}}</p>
+   </div>
+
+{{/missions}}
