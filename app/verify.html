@@ -59,13 +59,13 @@
     <script type="text/template" id="tag_template">
       <ul id="tags">
         {{#data}}
-          <li class="tagger {{class(time, videoTime)}} {{#if accepted}}is-accepted{{/if}} {{#if rejected}}is-rejected{{/if}}">
+          <li class="tagger {{class(time, videoTime)}} {{#if status}}is-{{status}}{{/if}}">
             <time data-time="{{time}}">{{formattedTime(time)}}</time>
             <span>{{tag}}</span>
-            <button class="btn btn-lg btn-success" on-click="accept">
+            <button class="btn btn-lg btn-success" on-click="status:accepted">
               Accept
             </button>
-            <button class="btn btn-lg btn-danger" on-click="reject">
+            <button class="btn btn-lg btn-danger" on-click="status:rejected">
               Reject
             </button>
           </li>

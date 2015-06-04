@@ -44,8 +44,8 @@
     }
   });
 
-  ractive.on('accept', function (evt) {
-
+  ractive.on('status', function (evt, s) {
+    ractive.set(evt.keypath + '.status', s);
   });
 
   function showTags() {

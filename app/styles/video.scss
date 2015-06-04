@@ -1,5 +1,5 @@
 .video-player {
-  height: 400px;
+  height: 300px;
   margin-top: 15px;
 }
 
@@ -104,7 +104,7 @@ h4 {
   max-height: 60px;
   overflow: hidden;
 
-  transition: opacity 0.5s ease-out, max-height 0.2s ease-out;
+  transition: opacity 0.5s ease-out, max-height 0.2s ease-out, color 0.2s ease-out;
 
   button {
     opacity: 0;
@@ -126,5 +126,12 @@ h4 {
 
   button:first-of-type {
     margin-left: 10px;
+  }
+
+  &.is-accepted {
+    color: #4cae4c;
+  }
+  &.is-rejected {
+    color: #d9534f;
   }
 }
