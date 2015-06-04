@@ -44,25 +44,12 @@
   });
 
   $('#save').click(function () {
-		var key ='AKIAJ5MNDAZVRU4MRCRQ'
-		var secret = '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'
-		AWS.config.update({accessKeyId: key, secretAccessKey: secret});
-		AWS.config.region = 'eu-west-1';
-    var data = $tags.children().map(function () {
-      var time = this.querySelector('time').getAttribute('data-time');
-      var tag = this.querySelector('span').textContent;
-      return '{"time": ' + time + ', "tag": "' + tag + '"}';
-    }).get().join(',\n');
-		var dynamodb = new AWS.DynamoDB();
 		var data = $tags.children().map(function(){ 
       var time = this.querySelector('time').getAttribute('data-time');
       var tag = this.querySelector('span').textContent;
 			return { time: time, tag: tag }
 		})
-		dynamodb.putItem({TableName:"newshack-video-tags", Item: {video: {S :'video-1'}, tags: {S: JSON.stringify(data.toArray())}}}, function(err, data) {
-			if (err) console.log(err, err.stack); // an error occurred
-			else     console.log(data);           // successful response
-		});
+		save('video-1', data.toArray())
 
     $('#saved').text('[' + data  + ']');
   });
