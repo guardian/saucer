@@ -18,10 +18,9 @@ $icon-font-path: '../fonts/';
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
   padding-bottom: 20px;
   font-family: verdana, tahoma, sans-serif;
-  background:#FFFEF1;
+  background:#fdfdf8;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -33,8 +32,15 @@ body {
 }
 
 /* Custom page header */
+.wrap {
+	background: #70b85d;
+}
 .header {
   border-bottom: 1px solid #0C273D;
+
+  max-width:730px;
+  margin:0 auto;
+  padding-top:20px;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -42,7 +48,13 @@ body {
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
+	  color:#fff !important;
   }
+}
+.header img {
+	width:50px;
+	float:left;
+	padding-right:10px;
 }
 
 h1, h2, h3 {
