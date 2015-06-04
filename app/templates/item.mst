@@ -9,7 +9,8 @@
             <h3>{{title}}</h3>
             <p>{{pitch}}</p>
             <p class="actions">
-              <a class="btn btn-default" href="#" role="button">View details »</a>
+              <a class="btn btn-default start" href="video.html?id={{id}}">Start »</a>
+              <a class="btn btn-default details" href="#" role="button">View details »</a>
               <a class="btn btn-default add-mission" href="#" role="button">+</a>
             </p>
         </div>

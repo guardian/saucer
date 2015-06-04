@@ -45,8 +45,20 @@
   padding: 0 5px;
 }
 
-#your-missions .add-mission {
+.start {
   display: none;
+}
+
+#your-missions {
+  & .add-mission {
+    display: none;
+  }
+  & .start {
+    display: block;
+  }
+  & .details {
+    display: none;
+  }
 }
 
 .icons {
