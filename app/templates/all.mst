@@ -16,7 +16,7 @@
             {{collected}}
           </div>
         </div>
-        <p><strong>Completion date:</strong> {{enddate}}</p>
+        <p><strong>Deadline:</strong> {{enddate}}</p>
 
         <p>Possibility of completing on time? <span class="glyphicon {{completion-icon}}" aria-hidden="true"></span></p>
         <a class="btn btn-default" href="#" role="button">Edit</a>
