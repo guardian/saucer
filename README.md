@@ -11,6 +11,10 @@ https://docs.google.com/spreadsheets/d/1-xaQYSi2vCehcIhs_p1bNWLed1PQb3nUSmVkRrOc
 http://visuals.guim.co.uk/spreadsheetdata/1-xaQYSi2vCehcIhs_p1bNWLed1PQb3nUSmVkRrOciFw.json
 
 ## Run
-npm install
-bower install
-gulp serve
+* npm install
+* bower install
+* gulp serve
+
+##Colour palette 
+https://color.adobe.com/Freshaliciousness-color-theme-6183300/?showPublished=true
+
