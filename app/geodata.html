@@ -20,6 +20,10 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 		<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.32.min.js"></script>
+			<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+			<style>
+				#map { height: 300px; }
+			</style>
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -37,7 +41,9 @@
    </div>
 
     <div class="container">
-			<iframe src="http://www.swarmize.com/swarms/djckuhji/embed" width="800" height="500" frameborder="0" seamless>
+			<iframe src="http://www.swarmize.com/swarms/djckuhji/embed" width="800" height="300" frameborder="0" seamless></iframe>
+
+			<div id="map"></map>
     </div>
 
     <!-- build:js scripts/vendor.js -->
@@ -61,9 +67,21 @@
       <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
       <!-- endbuild -->
 
-      <script src="scripts/lib/popcorn-complete.min.js"></script>
-      <script src="scripts/video.js"></script>
-      <script src="scripts/tag.js"></script>
-      <script src="scripts/tagRepo.js"></script>
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+			<script>
+				// create a map in the "map" div, set the view to a given place and zoom
+var map = L.map('map').setView([52.505, -0.09], 6);
+
+// add an OpenStreetMap tile layer
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+fetch("http://api.swarmize.com/swarms/djckuhji/results?api_key=7b774c7040611016&per_page=5000&format=geojson&geo_json_point_key=what_s_the_postcode_of_the_tesco_store_lonlat")
+	.then(function(x) { return x.json()})
+	.then(function(x) {
+		L.geoJson(x).addTo(map);
+	})
+			</script>
 </body>
 </html>
