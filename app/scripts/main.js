@@ -14,6 +14,9 @@ var main = (function() {
           $('#your-missions').html(Mustache.render(template, {'cols': 3, 'missions': yourMissions}));
           $('#recommended').html(Mustache.render(template, {'cols': 4, 'missions': recommended}));
         });
+         $.get('templates/all.mst', function (template) {
+          $('#all').html(Mustache.render(template, data));
+        });
     }
 
     function getData(callback) {
