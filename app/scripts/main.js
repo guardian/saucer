@@ -2,31 +2,18 @@
 var main = (function() {
 
     function getTeasers(data) {
-        $.get('templates/your-mission.mst', function(template) {
-            var rendered = Mustache.render(template, data);
-            $('#your-missions').html(rendered);
-        });
-        $.get('templates/recommended.mst', function(template) {
-            var rendered = Mustache.render(template, data);
-            $('#recommended').html(rendered);
-        });
-        $.get('templates/close.mst', function(template) {
-            var rendered = Mustache.render(template, data);
-            $('#close').html(rendered);
-        });
-        $.get('templates/recent.mst', function(template) {
-            var rendered = Mustache.render(template, data);
-            $('#recent').html(rendered);
-        });
-        $.get('templates/featured.mst', function(template) {
-            var rendered = Mustache.render(template, data);
-            $('#featured').html(rendered);
-        });
-        $.get('templates/all.mst', function(template) {
-            var rendered = Mustache.render(template, data);
-            $('#all').html(rendered);
+        var yourMissions = [];
+        var recommended = [];
+
+        data.missions.forEach(function (row) {
+          if (row['your-missions']) yourMissions.push(row);
+          if (row['recommended']) recommended.push(row);
         });
 
+        $.get('templates/item.mst', function (template) {
+          $('#your-missions').html(Mustache.render(template, {'cols': 3, 'missions': yourMissions}));
+          $('#recommended').html(Mustache.render(template, {'cols': 4, 'missions': recommended}));
+        });
     }
 
     function getData(callback) {
@@ -37,7 +24,6 @@ var main = (function() {
     }
 
     function loadTemplates(data) {
-      console.log(data)
 
       getTeasers(data);
 
