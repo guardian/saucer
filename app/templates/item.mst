@@ -1,0 +1,13 @@
+{{#missions}}
+     <div class="col-sm-6 col-md-{{cols}}">
+        <img  class="img-responsive" src="{{image}}" alt="{{title}}" />
+        <div class="thumbnail">
+            <h3>{{title}}</h3>
+            <p>{{pitch}}</p>
+            <p class="actions">
+              <a class="btn btn-default" href="#" role="button">View details »</a>
+              <a class="btn btn-default add-mission" href="#" role="button">+</a>
+            </p>
+        </div>
+   </div>
+{{/missions}}
