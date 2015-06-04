@@ -38,6 +38,10 @@
     <div class="container">
       <div id="video" class="video-player"></div>
 
+      <h3 class="description">
+        Tell us if you think these tags are correct
+      </h3>
+
       <div id="tags_verify"></div>
 
       <div class="footer">
@@ -48,20 +52,24 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/mustache/mustache.js"></script>
+    <script src="http://cdn.ractivejs.org/latest/ractive.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <script type="text/template" id="tag_template">
       <ul id="tags">
-        {{#currentData}}
-          <li>
-            <time data-time="{{time}}">{{formattedTime}}</time>
+        {{#data}}
+          <li class="tagger {{class(time, videoTime)}} {{#if accepted}}is-accepted{{/if}} {{#if rejected}}is-rejected{{/if}}">
+            <time data-time="{{time}}">{{formattedTime(time)}}</time>
             <span>{{tag}}</span>
-            <i class="glyphicon glyphicon-ok accept"></i>
-            <i class="glyphicon glyphicon-remove remove"></i>
+            <button class="btn btn-lg btn-success" on-click="accept">
+              Accept
+            </button>
+            <button class="btn btn-lg btn-danger" on-click="reject">
+              Reject
+            </button>
           </li>
-        {{/currentData}}
+        {{/data}}
       </ul>
     </script>
 

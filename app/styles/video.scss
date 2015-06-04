@@ -3,6 +3,11 @@
   margin-top: 15px;
 }
 
+.description {
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 10px;
+}
+
 .controls {
   margin: 5px 0;
 }
@@ -64,6 +69,11 @@
   .accept {
     color: #4a7801;
   }
+
+  font-size: 18px;
+  li:first-child {
+    font-size: 40px;
+  }
 }
 
 .timeline {
@@ -80,4 +90,41 @@ h4 {
 
 #tags_verify {
   margin-top: 15px;
+  height: 190px;
+  overflow: hidden;
+}
+
+.footer {
+  box-shadow: 0px -10px 20px 0px white;
+  position: relative;
+}
+
+.tagger {
+  opacity: 0.2;
+  max-height: 60px;
+  overflow: hidden;
+
+  transition: opacity 0.5s ease-out, max-height 0.2s ease-out;
+
+  button {
+    opacity: 0;
+  }
+
+  font-size: 18px !important;
+
+  &.is-done {
+    max-height: 0;
+    font-size: 40px !important;
+  }
+
+  &.in-progress {
+    font-size: 40px !important;
+    &, button {
+      opacity: 1;
+    }
+  }
+
+  button:first-of-type {
+    margin-left: 10px;
+  }
 }

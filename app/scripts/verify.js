@@ -22,20 +22,34 @@
     {"time": 47.17198, "tag": "Raised arms"},
     {"time": 9.925671, "tag": "Protestors"}]
 
-  function showTags() {
-    var time = window.video.currentTime();
-    var currentData = data.filter(function (d) { return d.time >= time - 10 && d.time < time; });
+  data.sort(function (a, b) { return a.time - b.time; });
 
-    var html = Mustache.render(tagTemplate, {
-      'currentData': currentData,
-      'formattedTime': function () {
-        var mins = Math.floor(this.time / 60);
-        var secs = Math.floor(this.time % 60);
+  var ractive = new Ractive({
+    'el': '#tags_verify',
+    'template': tagTemplate,
+    'data': {
+      'data': data,
+      'videoTime': 0,
+      'formattedTime': function (time) {
+        var mins = Math.floor(time / 60);
+        var secs = Math.floor(time % 60);
         return pad(mins) + ':' + pad(secs);
+      },
+      'class': function (time, videoTime) {
+        var clazz;
+        if (time < videoTime - 10) clazz = 'is-done';
+        else if (time < videoTime) clazz = 'in-progress';
+        return clazz;
       }
-    });
+    }
+  });
 
-    $('#tags_verify').html(html);
+  ractive.on('accept', function (evt) {
+
+  });
+
+  function showTags() {
+    ractive.set('videoTime', window.video.currentTime());
   }
 
   setInterval(showTags, 500);
